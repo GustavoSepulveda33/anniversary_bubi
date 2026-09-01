@@ -1,14 +1,22 @@
 :root {
   font-family: Georgia, 'Times New Roman', serif;
-  background: #f7efe9;
-  color: #3a2430;
+  background: #1a1216;
+  color: #f7efe9;
 }
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  height: 100%;
 }
 
 body {
   margin: 0;
-  min-height: 100vh;
 }

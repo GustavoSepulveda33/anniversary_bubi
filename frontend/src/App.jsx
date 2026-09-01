@@ -1,13 +1,20 @@
+import { Route, Routes } from 'react-router-dom'
+import Home from './pages/Home.jsx'
+import OptionPage from './pages/OptionPage.jsx'
+import { panels } from './data/panels.js'
+
 function App() {
   return (
-    <main className="home">
-      <p className="eyebrow">Our story</p>
-      <h1>Happy anniversary</h1>
-      <p className="note">
-        This site is just getting started. Photos, memories, and little
-        surprises will live here.
-      </p>
-    </main>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      {panels.map((panel) => (
+        <Route
+          key={panel.id}
+          path={panel.path}
+          element={<OptionPage panel={panel} />}
+        />
+      ))}
+    </Routes>
   )
 }
 
